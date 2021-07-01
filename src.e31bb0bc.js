@@ -2895,7 +2895,7 @@ function onLoadMore(event) {
   newsApiServises.fetchPhoto().then(renderPhotoCard);
 }
 
-;
+; // basicLightbox
 },{"./sass/main.scss":"sass/main.scss","lodash.debounce":"../node_modules/lodash.debounce/index.js","../node_modules/@pnotify/core/dist/PNotify.js":"../node_modules/@pnotify/core/dist/PNotify.js","../node_modules/@pnotify/mobile/dist/PNotifyMobile.js":"../node_modules/@pnotify/mobile/dist/PNotifyMobile.js","../node_modules/@pnotify/core/dist/BrightTheme.css":"../node_modules/@pnotify/core/dist/BrightTheme.css","./apiService.js":"apiService.js","./partials/photo-card.hbs":"partials/photo-card.hbs"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -2924,7 +2924,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "65466" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61774" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
