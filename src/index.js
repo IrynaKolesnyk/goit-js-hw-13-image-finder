@@ -77,3 +77,4 @@ function onLoadMore(event) {
         .then(renderPhotoCard);
 };
 
+// basicLightbox 
