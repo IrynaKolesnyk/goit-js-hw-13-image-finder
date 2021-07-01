@@ -69,6 +69,7 @@ function cleareGallaryContainer() {
 
 function addMarkup(element) {
     refs.galleryContainer.insertAdjacentHTML('beforeend', photoCardMarcup(element));
+    refs.loadMoreBtn.classList.remove('is-hidden');
 };
 
 function onLoadMore(event) {
