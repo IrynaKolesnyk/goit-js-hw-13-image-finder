@@ -1,0 +1,86 @@
+@charset "UTF-8";
+/*
+ * Главный файл стилей.
+ * Все паршалы подключаются сюда.
+ */
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+.container {
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 1300px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.list {
+  padding-left: 0;
+  list-style: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+p {
+  font-weight: bold;
+  margin: 0;
+  display: inline-block;
+}
+
+.search-form {
+  display: flex;
+  margin-top: 20px;
+  padding-bottom: 50px;
+  flex-direction: column;
+  align-content: space-around;
+  align-items: center;
+  font-family: sans-serif;
+  font-size: 20px;
+  text-transform: uppercase;
+}
+
+.search-form_input {
+  display: block;
+  margin-top: 20px;
+  padding: 5px;
+}
+
+.galery {
+  display: flex;
+  flex-wrap: wrap;
+  margin: -15px;
+  border-radius: 10px;
+}
+
+.gallary_item {
+  display: block;
+  border-radius: 10px;
+  background-color: aquamarine;
+  margin: 15px;
+  width: calc((100% - 90px) / 3);
+}
+
+.stats {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+}
+
+.hits-img {
+  border-top: 10px;
+  background-color: blue;
+}
+/*# sourceMappingURL=main.css.map */
