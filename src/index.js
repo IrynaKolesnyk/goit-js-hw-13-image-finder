@@ -30,6 +30,7 @@ function onInputSearchPhoto(event) {
     newsApiServises.query = inputValue;
 
     if (newsApiServises.query === '') {
+        refs.loadMoreBtn.classList.add('is-hidden');
         alert({
             text: 'Please, enter the text',
             delay: 1000,
