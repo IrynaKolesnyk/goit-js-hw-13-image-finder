@@ -1,9 +1,10 @@
 import './sass/main.scss';
 
 const debounce = require('lodash.debounce');
-import { error, alert, defaultModules } from '../node_modules/@pnotify/core/dist/PNotify.js';
-import * as PNotifyMobile from '../node_modules/@pnotify/mobile/dist/PNotifyMobile.js';
-import '../node_modules/@pnotify/core/dist/BrightTheme.css';
+import { error, alert, defaultModules } from '@pnotify/core/dist/PNotify.js';
+import * as PNotifyMobile from '@pnotify/mobile/dist/PNotifyMobile.js';
+import '@pnotify/core/dist/BrightTheme.css';
+import '@pnotify/core/dist/PNotify.css';
 defaultModules.set(PNotifyMobile, {});
 
 import NewsApiServises from './apiService.js';
