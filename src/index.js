@@ -58,24 +58,28 @@ function renderPhotoCard(hits) {
 
     addMarkup(hits);
 
-    const elementScroll = document.querySelectorAll('.gallery_item');
-    elementScroll[elementScroll.length - 12].scrollIntoView({
-        behavior: 'smooth',
-        block: 'start',
-        alignToTop: true,
-    });
+    // следить за концом window
+    setTimeout(() => {
+        window.scrollTo({
+            top: document.documentElement.scrollHeight,
+            behavior: 'smooth',
+        });
+    }, 500);
+
+    // const elementScroll = document.querySelectorAll('.gallery_item');
+    // elementScroll[elementScroll.length - 12].scrollIntoView({
+    //     behavior: 'smooth',
+    //     block: 'start',
+    //     alignToTop: true,
+    // });
 
     // скролить до кнопки refs.loadMoreBtn
-    // refs.loadMoreBtn.scrollIntoView({
-    //     behavior: 'smooth',
-    //     block: 'end',
-    // });
-
-    // следить за концом window
-    // window.scrollTo({
-    //     top: document.documentElement.scrollHeight,
-    //     behavior: 'smooth',
-    // });
+    // setTimeout(() => {
+    //     refs.loadMoreBtn.scrollIntoView({
+    //         behavior: 'smooth',
+    //         block: 'end',
+    //     });
+    // }, 500);
 
 };
 
