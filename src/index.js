@@ -1,11 +1,11 @@
 import './sass/main.scss';
 
 const debounce = require('lodash.debounce');
-import { error, alert, defaultModules } from '@pnotify/core/dist/PNotify.js';
-import * as PNotifyMobile from '@pnotify/mobile/dist/PNotifyMobile.js';
+import { error, alert } from '@pnotify/core/dist/PNotify.js';
 import '@pnotify/core/dist/BrightTheme.css';
 import '@pnotify/core/dist/PNotify.css';
-defaultModules.set(PNotifyMobile, {});
+import * as basicLightbox from 'basiclightbox'
+import "basiclightbox/dist/basicLightbox.min.css"
 
 import NewsApiServises from './apiService.js';
 import photoCardMarcup from './partials/photo-card.hbs';
@@ -20,6 +20,8 @@ const newsApiServises = new NewsApiServises();
 
 refs.searchForm.addEventListener('input', debounce(onInputSearchPhoto, 500));
 refs.loadMoreBtn.addEventListener('click', onLoadMore);
+refs.galleryContainer.addEventListener('click', onClickBigImg);
+
 
 
 function onInputSearchPhoto(event) {
@@ -63,6 +65,18 @@ function renderPhotoCard(hits) {
         alignToTop: true,
     });
 
+    // скролить до кнопки refs.loadMoreBtn
+    // refs.loadMoreBtn.scrollIntoView({
+    //     behavior: 'smooth',
+    //     block: 'end',
+    // });
+
+    // следить за концом window
+    // window.scrollTo({
+    //     top: document.documentElement.scrollHeight,
+    //     behavior: 'smooth',
+    // });
+
 };
 
 function cleareGallaryContainer() {
@@ -80,3 +94,22 @@ function onLoadMore(event) {
 };
 
 // basicLightbox 
+
+function onClickBigImg(event) {
+    if (event.target.tagName !== 'IMG') return false;
+
+    const imgSrc = event.target.getAttribute('big-src');
+
+    const instance = basicLightbox
+        .create(`<img src="${imgSrc}" width="800" height="600">`)
+
+    instance.show()
+
+    window.addEventListener('click', onClickWindowLightboxClose)
+};
+
+function onClickWindowLightboxClose(event) {
+    if (event.code === 'Escape') {
+        instance.close(() => console.log('лайтбокс больше не отображается'));
+    }
+};
